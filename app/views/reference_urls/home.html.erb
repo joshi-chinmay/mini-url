@@ -47,7 +47,7 @@
         data: {mini_url: mini_url},
         success: function(data) {
           var html = "<span>Mini url for the above link is - ";
-          html += "localhost:3000/url/" + data.mini_url + "</span>";
+            html += window.location.href + "url/" + data.mini_url + "</span>";
           $(".mini-url-details").append(html);
         },
         error: function(data) {
