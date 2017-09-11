@@ -25,7 +25,7 @@ html, body {
 .mini-url-title {
   width: 100%;
   height: 100px;
-  background-color: #cdcdcd;
+  background-color: #c0c0c0;
   line-height: 100px;
   text-align: center;
 }
@@ -36,13 +36,27 @@ html, body {
 }
 
 .mini-url-container {
-  display: table;
   background-color: #dddddd;
-  height: 70vh;
+  height: 66vh;
   width: 100%;
 }
 .mini-url-container-child {
-  display: table-cell;
-  vertical-align: middle;
   text-align: center;
+  padding: 60px 180px 0 180px;;
+}
+.mini-url-details {
+  padding-top: 40px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+input:active, input:focus, input:hover {
+  border: 1px solid #4CAF50 !important;
+}
+
+.btn-green {
+  background-color: #4CAF50;
+  color: #fff;
 }

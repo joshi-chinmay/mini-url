@@ -8,6 +8,7 @@ class ReferenceUrl < ApplicationRecord
 
   def set_defaults
     self.in_use ||= true
+    self.mini_url ||= self.generate_random_mini_url
   end
 
   def generate_random_mini_url
