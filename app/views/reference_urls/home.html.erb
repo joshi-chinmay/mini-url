@@ -13,9 +13,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="mini-url">Enter url to convert to mini url</label>
-              <input type="url" class="form-control" id="mini-url" placeholder="Enter url">
-              <small class="form-text text-muted">We'll never share your mini url with anyone else.</small>
+              <label class="pad-top-10px" for="mini-url">Enter url to convert to mini url</label>
+              <input type="url" class="pad-top-10px form-control" id="mini-url" placeholder="Enter url">
+              <small class="pad-top-10px form-text text-muted">We'll never share your mini url with anyone else.</small>
             </div>
 
             <button type="submit" class="btn btn-green generate-url">Generate</button>
@@ -37,6 +37,7 @@
 <%= javascript_tag do %>
   $(document).ready(function(){
     $(".generate-url").click(function(){
+      $(".mini-url-details").html("");
       var mini_url = $("#mini-url").val();
 
       $.ajax({

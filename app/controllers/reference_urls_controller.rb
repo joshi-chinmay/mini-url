@@ -7,10 +7,14 @@ class ReferenceUrlsController < ApplicationController
 
   def generate
     url = permitted_attributes[:mini_url]
-    @reference_url.associated_url = url
+
+    if @reference_url.new_record?
+      @reference_url.associated_url = url
+      @reference_url.save
+    end
 
     respond_to do |format|
-      if @reference_url.save
+      if @reference_url.persisted?
         format.json { render json: @reference_url.to_json, status: :ok }
       else
         format.json { render json: {error: @reference_url.errors.full_messages.to_sentence} }
@@ -32,10 +36,8 @@ class ReferenceUrlsController < ApplicationController
   end
 
   def set_new_reference_url
-    @reference_url = ReferenceUrl.find_by(mini_url: permitted_attributes[:mini_url])
-    if @reference_url.empty?
-      @reference_url = ReferenceUrl.new
-    end
+    @reference_url = ReferenceUrl.find_by(associated_url: permitted_attributes[:mini_url])
+    @reference_url = ReferenceUrl.new if @reference_url.blank?
   end
 
   def permitted_attributes

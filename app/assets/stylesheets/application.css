@@ -37,12 +37,12 @@ html, body {
 
 .mini-url-container {
   background-color: #dddddd;
-  height: 66vh;
+  height: 100vh;
   width: 100%;
 }
 .mini-url-container-child {
   text-align: center;
-  padding: 60px 180px 0 180px;;
+  padding: 60px 180px 0px 180px;;
 }
 .mini-url-details {
   padding-top: 40px;
@@ -59,4 +59,8 @@ input:active, input:focus, input:hover {
 .btn-green {
   background-color: #4CAF50;
   color: #fff;
+}
+
+.pad-top-10px {
+  padding-top: 10px;
 }
