@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mini_url: MyString
+  associated_url: MyText
+  in_use: false
+
+two:
+  mini_url: MyString
+  associated_url: MyText
+  in_use: false
