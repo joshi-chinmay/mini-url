@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get "/:mini_url_code", to: 'reference_urls#navigate', controller: 'reference_urls'
   post :generate, to: 'reference_urls#generate', controller: 'reference_urls', format: :json
 
-  root to: 'reference_urls#home'
+  root to: 'reference_urls#url'
 end

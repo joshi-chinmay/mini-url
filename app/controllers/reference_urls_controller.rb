@@ -20,7 +20,7 @@ class ReferenceUrlsController < ApplicationController
   end
 
   def navigate
-    if @reference_url.present?
+    if @reference_url.present? && @reference_url.associated_url.present?
       redirect_to @reference_url.associated_url
     else
       render "invalid"
@@ -40,5 +40,4 @@ class ReferenceUrlsController < ApplicationController
   def permitted_attributes
     params.permit(:mini_url)
   end
-
 end
