@@ -1,9 +1,6 @@
 class ReferenceUrlsController < ApplicationController
-  before_action :get_referennce_url, only: :url
+  before_action :get_referennce_url, only: :navigate
   before_action :set_new_reference_url, only: :generate
-
-  def home
-  end
 
   def generate
     url = permitted_attributes[:mini_url]
@@ -22,7 +19,7 @@ class ReferenceUrlsController < ApplicationController
     end
   end
 
-  def url
+  def navigate
     if @reference_url.present?
       redirect_to @reference_url.associated_url
     else

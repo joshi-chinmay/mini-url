@@ -195,10 +195,9 @@
         null,
         null,
         1,
-        null,
-        1,
         1,
         null,
+        1,
         null
       ],
       "/home/amura/Chinmay/Rails Projects/mini-url/app/helpers/application_helper.rb": [
@@ -239,6 +238,6 @@
         null
       ]
     },
-    "timestamp": 1505191087
+    "timestamp": 1505237046
   }
 }
