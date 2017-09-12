@@ -33,4 +33,5 @@ RSpec.describe ReferenceUrl, :type => :model do
 
     expect(new_record.mini_url).not_to eql(@reference_url.mini_url)
   end
+
 end
