@@ -45,6 +45,8 @@ group :development, :test do
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-doc'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'simplecov', :require => false
 end
 
 group :development do
