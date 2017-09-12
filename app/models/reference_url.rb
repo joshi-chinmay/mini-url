@@ -1,5 +1,7 @@
 class ReferenceUrl < ApplicationRecord
 
+  CHARSET_MAP = (48..57).map(&:chr) + (65..90).map(&:chr) + (97..122).map(&:chr)
+
   after_initialize :set_defaults, unless: :persisted?
 
   validates :mini_url, :associated_url, :in_use, presence: true
@@ -9,10 +11,16 @@ class ReferenceUrl < ApplicationRecord
   def set_defaults
     self.in_use ||= true
     self.mini_url ||= self.generate_random_mini_url
+
+    # always have a uniq miin url
+    loop do
+      break if ReferenceUrl.where(mini_url: self.mini_url).count == 0
+      self.mini_url = self.generate_random_mini_url
+    end
   end
 
   def generate_random_mini_url
-    (0...16).map{97.+(rand(25)).chr.downcase}.join
+    (0..9).map { CHARSET_MAP[rand(CHARSET_MAP.count)] }.join
   end
 
 end
