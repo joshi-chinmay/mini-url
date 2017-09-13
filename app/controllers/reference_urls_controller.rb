@@ -1,6 +1,16 @@
 class ReferenceUrlsController < ApplicationController
-  before_action :get_referennce_url, only: :navigate
+  before_action :get_referennce_url, only: [:navigate, :convert]
   before_action :set_new_reference_url, only: :generate
+
+  def convert
+    respond_to do |format|
+      if @reference_url.present?
+        format.json { render json: @reference_url }
+      else
+        format.json { render json: {} }
+      end
+    end
+  end
 
   def generate
     url = permitted_attributes[:mini_url]

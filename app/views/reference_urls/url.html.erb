@@ -12,13 +12,20 @@
         <div class="pad-top text-center">
           <form>
             <div class="form-group pad-lft pad-rgt">
-              <label class="pt-25px" for="mini-url">Enter url to convert to mini url</label>
-              <input type="url" class="pt-25px form-control" id="mini-url" placeholder="Enter url">
+              <label class="pt-25px" for="mini-url">
+                Convert url to mini url
+                <span style="margin: 0 6px 0 9px;">/</span>
+                Mini url to original url
+              </label>
+
+              <input type="url" class="pt-25px form-control" id="mini-url" placeholder="Enter url or mini url">
               <small class="pt-25px form-text text-muted">We'll never share your mini url with anyone else.</small>
             </div>
 
             <div class="form-group pt-25px">
-              <button type="submit" class="btn btn-green generate-url">Generate</button>
+              <button type="submit" class="btn btn-green generate-url">Make mini url</button>
+              <span style="margin: 0 17px 0 17px;">Or</span>
+              <button type="submit" class="btn btn-green convert-url">Get stored url</button>
             </div>
           </form>
 
