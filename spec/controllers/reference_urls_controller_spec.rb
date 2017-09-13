@@ -31,6 +31,12 @@ RSpec.describe ReferenceUrlsController, type: :controller do
     expect(JSON.parse(response.body)["mini_url"].present?).to be(true)
   end
 
+  it "creates new reference url" do
+    post :generate, mini_url: Faker::Lorem.word, format: :json
+
+    expect(JSON.parse(response.body)["error"]).to include("Associated url is invalid")
+  end
+
   it "validates the response as 200" do
     post :generate, mini_url: Faker::Internet.url, format: :json
 
