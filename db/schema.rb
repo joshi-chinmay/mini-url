@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20170911100513) do
   create_table "reference_urls", force: :cascade do |t|
     t.string   "mini_url"
     t.text     "associated_url"
-    t.boolean  "in_use"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

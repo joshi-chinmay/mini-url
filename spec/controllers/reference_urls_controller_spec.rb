@@ -43,4 +43,16 @@ RSpec.describe ReferenceUrlsController, type: :controller do
     expect(response.status).to be(200)
   end
 
+  it "validates the response as 200" do
+    get :convert, mini_url_code: @reference_url.mini_url, format: :json
+
+    expect(JSON.parse(response.body)["associated_url"]).to eq(@reference_url.associated_url)
+  end
+
+  it "validates the response as 200" do
+    get :convert, mini_url_code: Faker::Lorem.word, format: :json
+
+    expect(JSON.parse(response.body)).to eq({})
+  end
+
 end
